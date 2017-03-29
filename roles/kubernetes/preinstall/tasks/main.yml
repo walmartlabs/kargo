@@ -116,7 +116,7 @@
 
 - name: Install epel-release on RedHat/CentOS
   shell: rpm -qa | grep epel-release || rpm -ivh {{ epel_rpm_download_url }}
-  when: ansible_distribution in ["CentOS","RedHat"] and not is_atomic
+  when: ansible_distribution in ["CentOS","RedHat"] and not is_atomic and {{ use_public_epel }}
   register: epel_task_result
   until: epel_task_result|succeeded
   retries: 4
@@ -221,4 +221,3 @@
   when: azure_check.stat.exists and
         ansible_distribution in ["CentOS","RedHat"]
   tags: bootstrap-os
-
