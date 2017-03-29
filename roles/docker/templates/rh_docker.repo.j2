@@ -1,7 +1,7 @@
 [dockerrepo]
 name=Docker Repository
-baseurl=https://yum.dockerproject.org/repo/main/centos/7
+baseurl={{ docker_yum_repo_url }}
 enabled=1
-gpgcheck=1
-gpgkey=https://yum.dockerproject.org/gpg
+gpgcheck={{ docker_yum_check_gpg }}
+{% if gpgcheck == 1 %}gpgkey={{ docker_yum_gpg_check_key_url }}{% endif %}
 {% if http_proxy is defined %}proxy={{ http_proxy }}{% endif %}

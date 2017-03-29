@@ -8,3 +8,7 @@ docker_repo_key_info:
 
 docker_repo_info:
   repos:
+
+docker_yum_repo_url: "https://yum.dockerproject.org/repo/main/centos/7"
+docker_yum_check_gpg: 1
+docker_yum_gpg_check_key_url: "https://yum.dockerproject.org/gpg"
