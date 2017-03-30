@@ -3,5 +3,5 @@ name=Docker Repository
 baseurl={{ docker_yum_repo_url }}
 enabled=1
 gpgcheck={{ docker_yum_check_gpg }}
-{% if gpgcheck == 1 %}gpgkey={{ docker_yum_gpg_check_key_url }}{% endif %}
+{% if docker_yum_check_gpg == 1 %}gpgkey={{ docker_yum_gpg_check_key_url }}{% endif %}
 {% if http_proxy is defined %}proxy={{ http_proxy }}{% endif %}

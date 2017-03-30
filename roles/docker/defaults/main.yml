@@ -12,3 +12,5 @@ docker_repo_info:
 docker_yum_repo_url: "https://yum.dockerproject.org/repo/main/centos/7"
 docker_yum_check_gpg: 1
 docker_yum_gpg_check_key_url: "https://yum.dockerproject.org/gpg"
+
+docker_dns_server_size: 3
